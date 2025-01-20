@@ -13,8 +13,11 @@
 # 0   0   0    3       
 # arr = [3,-1,1,-1,1,-1,1,-3]
 # prefix = [3, 2, 4, 3, 4, 3, 3]
+# import sys
+# input = sys.stdin.readline  
+# 이거 한줄 추가한다고 속도가 매우 빨라졌다.........?
 import sys
-input = sys.stdin.readline  # 이 한 줄 추가
+input = sys.stdin.readline 
 N, H = map(int, input().split())
 obstacles = [int(input()) for _ in range(N)]
 arr = [0 for _ in range(H+1)]
