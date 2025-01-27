@@ -11,8 +11,12 @@ input = sys.stdin.readline
 N = int(input())
 schedule = [list(map(int,input().split())) for _ in range(N)]
 max_price = 0
+m = 0
 def recursion(idx, price):
   global max_price
+  global m
+  m += 1
+  print(m)
   if idx == N:
     max_price = max(max_price, price)
     return
