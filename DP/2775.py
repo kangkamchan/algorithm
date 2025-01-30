@@ -12,7 +12,8 @@ for i in range(1,15):
 T = int(input())
 arr = []
 for i in range(T):
-  k, n = map(int,input().split())
-  arr.append(k,n)
+  k = int(input())
+  n = int(input())
+  arr.append([k,n])
 for ele in arr:
   print(dp[ele[0]][ele[1]])
