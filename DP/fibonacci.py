@@ -10,7 +10,7 @@
 # m = 0
 # n = int(input())
 # print(fibo(n))
-#피보나치 수열 메모이제이션으로 구현하기
+#피보나치 수열 메모이제이션으로 구현하기 => 20번째 수 구하는데 37번의 연산 수행행
 #fibo(n) = fibo(n-1) + fibo(n-2)
 #fibo(n-1) 이 이미 있다면 그냥 사용, 없다면 fibo(n-2) + fibo(n-3)으로 저장 하고 리턴
 def fibo(n):
@@ -30,6 +30,5 @@ dp = {
   1:1,
   2:1
 }
-
 n = int(input())
 print(fibo(n))

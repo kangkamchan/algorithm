@@ -16,6 +16,8 @@
 #dp[8] = min(2,9999999,3) + 1  = 3
 #dp[9] = min(999999999,1,3) + 1 = 2
 #dp[10] = min(3,99999999,2) + 1 = 3
+import sys
+input = sys.stdin.readline
 N = int(input())
 dp = [9999999 for _ in range(1000001)]
 dp[1] = 0

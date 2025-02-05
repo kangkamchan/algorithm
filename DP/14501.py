@@ -1,7 +1,8 @@
 #입력값 N 남은 일수
 #T_i, P_i : i일 걸리는 시간, 금액
 #schedule = [] 입력받은 시간, 금액
-
+import sys
+input = sys.stdin.readline
 def recursion(idx):
   global m
   m += 1

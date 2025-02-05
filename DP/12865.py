@@ -11,7 +11,6 @@ import sys
 input = sys.stdin.readline
 
 def recursion(idx, w):
-  print(dp[idx][w])
   if w > K:
     return -999999
   if idx == N:
