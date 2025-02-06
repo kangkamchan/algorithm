@@ -10,15 +10,6 @@
 #floor += 1
 #sum += 왼쪽값 또는 오른쪽값, 왼쪽값 idx 오른쪽값 idx+1 => 왼쪽,오른쪽 각각 재귀함수 총 2번 호출
 #탈출조건 floor > n
-import sys
-input = sys.stdin.readline
-n = int(input())
-triangle = [list(map(int,input().split())) for _ in range(n)]
-for i in range(n-2,-1,-1):
-  for j in range(i+1):
-    triangle[i][j] = max(triangle[i][j]+triangle[i+1][j],triangle[i][j]+triangle[i+1][j+1])
-print(triangle)
-
 # 재귀함수만 활용
 # dp = [[0 for _ in range(i)] for i in range(n+1)]
 # def triangle_max_sum(i,j):
@@ -50,3 +41,12 @@ print(triangle)
 # triangle = [list(map(int,input().split())) for _ in range(n)]
 # dp = [[None] * (i+1) for i in range(n)]
 # print(triangle_max_sum(0,0))
+#DP 타뷸레이션션
+import sys
+input = sys.stdin.readline
+n = int(input())
+triangle = [list(map(int,input().split())) for _ in range(n)]
+for i in range(n-2,-1,-1):
+  for j in range(i+1):
+    triangle[i][j] = max(triangle[i][j]+triangle[i+1][j],triangle[i][j]+triangle[i+1][j+1])
+print(triangle[0][0])
