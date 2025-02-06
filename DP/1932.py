@@ -13,19 +13,40 @@
 import sys
 input = sys.stdin.readline
 n = int(input())
-triangle = [0]
-for _ in range(n):
-  triangle.append(list(map(int,input().split())))
-dp = [[0 for _ in range(i)] for i in range(n+1)]
-def max_sum(floor, idx, sum):
-  if idx < 0 or idx >= floor:
-    return -999999
-  if dp[floor][idx] != 0:
-    return dp[floor][idx]
-# print(dp)
-# print(triangle)
-for i in range(n-1,0,-1):
-  for j in range(i):
+triangle = [list(map(int,input().split())) for _ in range(n)]
+for i in range(n-2,-1,-1):
+  for j in range(i+1):
     triangle[i][j] = max(triangle[i][j]+triangle[i+1][j],triangle[i][j]+triangle[i+1][j+1])
 print(triangle)
 
+# 재귀함수만 활용
+# dp = [[0 for _ in range(i)] for i in range(n+1)]
+# def triangle_max_sum(i,j):
+#   if i == n-1:
+#     return triangle[i][j]
+#   return triangle[i][j] + max(triangle_max_sum(i+1,j),triangle_max_sum(i+1,j+1))
+# print(max(dp[n]))
+
+#DP 메모이제이션
+#삼각형 꼭대기(=> 0층이라 함)에서 시작
+#0층 0번째합 => 1층 0번째까지 합, 1층 1번째까지 합 중 큰거 + 0층 0 번째값
+#1층 0번째합 => 2층 0번째까지 합, 2층 1번째까지 합 중 큰거 + 1층 0 번째 값
+#i층 j번째 합 => i+1층 j번째까지 합, i+1층 j+1번째까지 합 중 큰거 + i 층 j 번째 값
+#i층 j번째 합 => dp[i][j]
+#i층 j번째 값 => triangle[i][j]
+#재귀함수 작성
+#dp[i][j]에 값이 존재하면 dp[i][j]반환
+#존재하지 않으면 dp[i][j]=triangle[i][j] + max([i+1][j] 까지합,[i+1][j+1]까지 합)하고 dp[i][j]반환
+#탈출조건 i == 마지막층 이면 마지막층까지 합은 마지막층 값이므로 => dp[i][j] 에 triangle[i][j] 넣고 dp[i][j]반환
+# def triangle_max_sum(i,j):
+#   if i == n-1:
+#     dp[i][j] = triangle[i][j]
+#     return dp[i][j]
+#   if dp[i][j] is not None:
+#     return dp[i][j]
+#   dp[i][j] = triangle[i][j] + max(triangle_max_sum(i+1,j),triangle_max_sum(i+1,j+1))
+#   return dp[i][j]
+# n = int(input())
+# triangle = [list(map(int,input().split())) for _ in range(n)]
+# dp = [[None] * (i+1) for i in range(n)]
+# print(triangle_max_sum(0,0))
