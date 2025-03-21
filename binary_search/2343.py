@@ -1,7 +1,8 @@
 #입력값 N = 데이터수, M = 저장공간수, data = [] N개의 데이터 용량 리스트
 #데이터를 M개의 저장공간에 나누어담아야 할 때 저장공간의 최소 용량을 출력
 #데이터는 순서대로 넣어야함
-
+import sys
+input = sys.stdin.readline
 N,M = map(int,input().split())
 data = list(map(int,input().split()))
 s = max(data)

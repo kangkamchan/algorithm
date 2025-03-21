@@ -7,15 +7,18 @@
 # 적록색약인 사람이 보는 영역의 개수 아닌 사람이 보는 영역의 개수 
 # is_grouped_nomal 영역여부 = [1 영역에 포함됨 0 영역에포함안됨]
 # is_grouped_special 영역여부 = [1 영역에 포함됨 0 영역에포함안됨]
+# search (y,x,map,is_grouped)
 # 모든 y, x 을 탐색
 # is_grouped 가 0이면
 # q = deque()
-# 정상 기준칸 색깔 = nomal[y][x]
+# 색깔 = map[y][x]
 # 영역 += 1
 # q에 [y,x] append
+# y,x 방문처리
 # while q:
-#   next_y, next_x = q.popleft()
-#   색깔 같으면 영역처리
+#   temp_y, temp_x = q.popleft()
+#   색깔 같으면 
+#   영역처리
 #   상하좌우 탐색
 #       정상범위면 방문처리
 #       큐에 append

@@ -21,7 +21,6 @@ visited[1] = True
 answer = 0
 while len(q) > 0:
     node = q.popleft()
-    print(node)
     answer+=1
     for next in graph[node]:
         if visited[next]:

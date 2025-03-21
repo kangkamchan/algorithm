@@ -9,4 +9,4 @@ dp = [[1 if j == 1 or i == 0 else 0 for j in range(K+1)] for i in range(N+1)]
 for i in range(1,N+1):
     for j in range(2,K+1):
         dp[i][j] = dp[i-1][j] + dp[i][j-1]
-print(dp[N][K])
+print(dp[N][K]%1000000000)

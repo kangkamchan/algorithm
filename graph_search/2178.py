@@ -3,7 +3,8 @@
 #map = [] Y*X 2차원 배열
 #1은 이동가능 0은 이동 불가
 #1,1에서 N,M 이동할 때 최소 칸 수 인접한 칸으로만 이동 가능
-
+import sys
+sys.setrecursionlimit = 1000000000
 from collections import deque
 Y, X = map(int,input().split())
 map = [list(map(int,list(input().strip()))) for _ in range(Y)]
@@ -27,6 +28,3 @@ def bfs():
                     distance[ey][ex] = distance[y][x]+1
     bfs()
 bfs()
-print(map)
-print(visited)
-print(distance)

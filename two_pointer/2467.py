@@ -9,7 +9,7 @@ s = 0
 e = N-1
 answer = [0,0]
 sum = 2000000001
-while s <= e:
+while s < e:
     temp_sum = array[s] + array[e]
     if abs(temp_sum) < sum:
         answer[0] = array[s]

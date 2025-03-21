@@ -10,13 +10,13 @@ s = 0
 e = N-1
 answer = 0
 while s <= e:
-    if e == s:
-        remains += 1
-        break
     if array[e] >= X:
         answer += 1
         e -= 1
         continue
+    if e == s:
+        remains += 1
+        break
     if array[e] + array[s] >= X/2:
         answer += 1
         e -= 1

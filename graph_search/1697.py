@@ -15,7 +15,6 @@ while next_q:
     next_q.clear()
     while temp_q:
         x = temp_q.popleft()
-        print(x, T)
         if x == K:
             print(T)
             next_q.clear()

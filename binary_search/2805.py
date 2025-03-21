@@ -2,6 +2,8 @@
 #N = 나무의 수, M = 필요한 나무의 높이
 #trees = [] 나무 높이 리스트
 #필요한 높이 M 을 얻기 위한 절단 높이 최댓값 출력
+import sys
+input = sys.stdin.readline
 N, M = map(int,input().split())
 trees = list(map(int,input().split()))
 s = 0

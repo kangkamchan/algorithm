@@ -11,7 +11,7 @@ N = int(input().strip())
 graph = [list(map(int,input().strip().split())) for _ in range(N)]
 move = [[1,0],[0,1],[-1,0],[0,-1]]
 rain = 1
-answer = 0
+answer = 1
 while True:
     visited = [[0 for _ in range(N)] for _ in range(N)]
     count = 0

@@ -6,7 +6,6 @@
 L = int(input())
 str = input()
 array = list(map(lambda x: ord(x)-96,str))
-print(array)
 hash = 0
 for i in range(L):
     hash += array[i] * (31**i)

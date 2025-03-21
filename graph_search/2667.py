@@ -32,5 +32,5 @@ for i in range(N):
                                     q.append([ni,nj])
                 complexes.append(count)   
 print(len(complexes))
-for complex in complexes:
+for complex in sorted(complexes):
     print(complex)
